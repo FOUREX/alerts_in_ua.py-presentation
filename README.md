@@ -34,15 +34,16 @@ py alerts.py -h
 ```
 
 Дані для відображення задаються параметром `-f`, `--format`.Доступні параметри дивитися
-на сайті https://devs.alerts.in.ua/#modelalert (Назва поля). Приклад використання:
+на [сайті](https://devs.alerts.in.ua/#modelalert) (назва поля). Приклад використання:
 ```shell
 py alerts.py monitor -f "started_at" "location_title" "location_oblast" "location_uid"
 ```
 
 Режим монітору. Дані будуть оновлюватися автоматично. Оновлення відбувається 3 рази за хвилину.
-Частота оновлень змінюється параметрами `-freq`, `--frequency`. Приклад використання:
+Частота оновлень змінюється параметрами `-freq`, `--frequency`, не рекомендується перевищувати
+soft limit API (3-4 запити на хвилину) [детальніше](https://devs.alerts.in.ua/#documentationrate_limits). Приклад використання:
 ```shell
-py alerts.py monitor -freq 5
+py alerts.py monitor -freq 4
 ```
 
 Загальний вигляд та використання:
