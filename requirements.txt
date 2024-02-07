@@ -3,3 +3,4 @@ flask==3.0.2
 alerts-in-ua.py==1.2.6
 argparse==1.4.0
 prettytable==3.9.0
+aiogram==2.23.1
