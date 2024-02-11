@@ -1,11 +1,29 @@
 :root {
     --background-color: #2C2F33;
-    --container-color: #34383c;
+    --foreground-color: #34383c;
     --text-color: #ffffff;
     --buttons-color: #5865F2;
     --button-color-active: #6e78dd;
 
     font-family: "JetBrains Mono", "sans-serif";
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--foreground-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--background-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 body {
@@ -15,32 +33,21 @@ body {
     padding: 25px;
 }
 
-.container {
+.main {
     display: flex;
+    margin: 0 auto;
 
-    background: var(--container-color);
+    background: var(--foreground-color);
 
     padding: 10px;
-
-    border-radius: 10px;
-
-    /*outline: 2px solid white;*/
-    /*outline-offset: -2px;*/
-}
-
-.main {
-    margin: 0 370px;
     border-radius: 20px;
+
+    width: 1400px;
+    height: 619px;
+
 }
 
-.image {
-    height: 495px;
-    width: 740px;
-
-    padding: 0;
-}
-
-.image img {
+.main img {
     border-radius: 10px;
 }
 
@@ -49,6 +56,8 @@ body {
     margin-left: 10px;
     word-wrap: break-word;
     flex-direction: column;
+
+    overflow-y: scroll;
 }
 
 .data p {
@@ -56,10 +65,13 @@ body {
 }
 
 .controls {
+    display: flex;
+    background: var(--foreground-color);
+
     margin: 10px auto;
 
     width: 200px;
-    height: 35px;
+    height: 40px;
 
     padding: 10px;
     justify-content: center;
@@ -71,6 +83,7 @@ body {
     display: flex;
 
     width: 100%;
+    padding: 10px;
 
     background: var(--buttons-color);
 
@@ -78,7 +91,6 @@ body {
     align-items: center;
 
     border-radius: 10px;
-
     user-select: none;
 }
 
