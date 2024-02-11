@@ -3,7 +3,9 @@ from os import getenv
 
 from dotenv import load_dotenv
 from flask import Flask, render_template, jsonify
+
 from alerts_in_ua.alerts_client import AlertsClient
+from alerts_in_ua.map_style import MapStyle
 
 load_dotenv("../.env")
 
@@ -14,7 +16,7 @@ alerts_client = AlertsClient(getenv("ALERTS_CLIENT_TOKEN"))
 @app.route("/api/get_active", methods=["GET"])
 def get_active():
     locations = alerts_client.get_active()
-    image = locations.render_map()
+    image = locations.render_map(MapStyle(dpi=90))
 
     image_base64 = base64.b64encode(image.getvalue()).decode("utf-8")
     locations_list = locations.location_title
@@ -28,4 +30,4 @@ def root():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
