@@ -111,5 +111,3 @@ flask run --host=127.0.0.1 --port=25585
 PyPi бібліотеки: https://pypi.org/project/alerts-in-ua.py/
 
 Telegram канал для обговорень: https://t.me/Alerts_in_ua_dot_py
-
-![Кря](https://tenor.com/ru/view/pikachu-pokemon-tongue-out-wiggle-tongue-weird-face-gif-16364996.gif)
